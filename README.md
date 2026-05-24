@@ -6,21 +6,26 @@
 This module allows you to modify bootanimation without [meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlayfs) and [Magisk Magic Mount](https://topjohnwu.github.io/Magisk/details.html)
 
 ### 📙 • This documentation includes;
-- [📱 • Tested With](#📱%20•%20Tested%20With)
-- [🖥️📲 • How to install module?](#🖥️📲%20•%20How%20to%20install%20module?)
-- [🔧📲 • Setup](#🔧📲%20•%20Setup)
-- [📱 • Usage](#📱%20•%20Usage)
-- [❓ • How to work?](#❓%20•%20How%20to%20work?)
+- [📱 • Tested With](#--tested-with)
+- [🖥️📲 • How to install module?](#%EF%B8%8F--how-to-install-module)
+- [🔧📲 • Setup](#--setup)
+- [📱 • Usage](#--usage)
+- [❓ • How to work?](#--how-to-work)
 
 ---
 
 # 📱 • Tested With
 
 **Root Manager:**
+
 **Version:**
+
 **Device:** Xiaomi Redmi Note 12 4G (tapas)
+
 **Android Version:** Android 15 QPR2
+
 **ROM:** Evolution-X 10.6
+
 **Module Version:**
 
 ---
