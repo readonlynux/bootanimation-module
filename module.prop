@@ -1,0 +1,6 @@
+id=bootanimation-changer
+name=Bootanimation
+version=v0.1-nightly
+versionCode=1
+author=readonlynux
+description=Bootanimation changer without OverlayFS
