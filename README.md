@@ -16,9 +16,9 @@ This module allows you to modify bootanimation without [meta-overlayfs](https://
 
 # 📱 • Tested With
 
-**Root Manager:**
+**Root Manager:** KernelSU
 
-**Version:**
+**Manager Version:** v3.2.4 (32457)
 
 **Device:** Xiaomi Redmi Note 12 4G (tapas)
 
@@ -26,7 +26,7 @@ This module allows you to modify bootanimation without [meta-overlayfs](https://
 
 **ROM:** Evolution-X 10.6
 
-**Module Version:**
+**Module Version:** v0.1-alpha
 
 ---
 
