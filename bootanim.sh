@@ -6,7 +6,13 @@ user_anipath="$2"
 
 # ======== functions ========
 guide(){
-	echo '1'
+	echo '=========================================='
+	echo 'bootanim - v0.1-alpha'
+	echo '=========================================='
+	echo 'set - Applies bootanimation.zip'
+	echo 'reset - Resets bootanimation.zip'
+	echo 'help - Shows help menu'
+	echo '=========================================='
 }
 abort_msg(){
 	local abortInp="$@"
@@ -15,7 +21,7 @@ abort_msg(){
 }
 log_msg(){
 	local logInp="$@"
-	echo "iI: $logInp"
+	echo "I: $logInp"
 }
 
 # ======== main ========
@@ -26,6 +32,7 @@ if [ "$user_command" = 'set' ]; then
 	cp -f "$user_anipath" "$bootani_path"
 	chcon "u:object_r:system_file:s0" "$user_anipath"
 	chown 644 "$user_anipath"
+	log_msg "Success!"
 	exit
 elif [ "$user_command" = "reset" ]; then
 	[ ! -f "$bootani_path" ] && abort_msg "No custom bootanimation found to remove."
