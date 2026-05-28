@@ -30,8 +30,8 @@ if [ "$user_command" = 'set' ]; then
 	[ ! -f "$user_anipath" ] && abort_msg "Bootanimation file not found!"
 	mkdir -p "$persist_dir"
 	cp -f "$user_anipath" "$bootani_path"
-	chcon "u:object_r:system_file:s0" "$user_anipath"
-	chown 644 "$user_anipath"
+	chcon "u:object_r:system_file:s0" "$bootani_path"
+	chown 644 "$bootani_path"
 	log_msg "Success!"
 	exit
 elif [ "$user_command" = "reset" ]; then
