@@ -7,7 +7,7 @@ user_anipath="$2"
 # ======== functions ========
 guide(){
 	echo '=========================================='
-	echo 'bootanim - v0.1-alpha'
+	echo 'bootanim - v0.2-alpha'
 	echo '=========================================='
 	echo 'set - Applies bootanimation.zip'
 	echo 'reset - Resets bootanimation.zip'
