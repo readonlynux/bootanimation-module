@@ -9,6 +9,7 @@ This module allows you to modify bootanimation without [meta-overlayfs](https://
 > I am not responsible for bricked devices, dead SD cards. Flash at your own risk.
 
 ### 📙 • This documentation includes;
+- [🌟 • Features](#--features)
 - [📱 • Tested With](#--tested-with)
 - [🖥️📲 • How to install module?](#%EF%B8%8F--how-to-install-module)
 - [🔧📲 • Setup](#--setup)
