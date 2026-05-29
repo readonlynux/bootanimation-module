@@ -35,7 +35,7 @@ This module allows you to modify bootanimation without [meta-overlayfs](https://
 
 # 🖥️📲 • How to install module?
 
-- Firstly, get module from [releases]()
+- Firstly, get module from [releases](https://github.com/readonlynux/bootanimation-module/releases/latest)
 - Open your Root Manager app
 - Go to *Modules* section
 - Click *Install from storage*
