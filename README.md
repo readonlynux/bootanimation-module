@@ -39,7 +39,7 @@ This module allows you to modify bootanimation without [meta-overlayfs](https://
 
 **ROM:** Evolution-X 10.6
 
-**Module Version:** v0.1-alpha
+**Module Version:** v0.2-alpha
 
 ---
 
