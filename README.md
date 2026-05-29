@@ -63,7 +63,7 @@ bootanim set /path/to/bootanimation.zip
 
 # ❓ • How to work?
 
-The `bootanim` command copies the bootanimation file you selected to the `/data/adb/bootanimation` folder.`service.sh` script runs on each reboot and binds `bootanimation.zip` to `/system/product/media/bootanimation.zip`.
+The `bootanim` command copies the bootanimation file you selected to the `/data/adb/bootanimation` folder.`post-fs-data.sh` script runs on each reboot and binds `bootanimation.zip` to `/system/product/media/bootanimation.zip`.
 
 
 ---
