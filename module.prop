@@ -1,6 +1,6 @@
 id=bootanimation-changer
 name=Bootanimation
-version=v0.1-alpha
-versionCode=1
+version=v0.2-alpha
+versionCode=2
 author=readonlynux
 description=Bootanimation changer without OverlayFS
