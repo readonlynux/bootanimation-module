@@ -15,6 +15,15 @@ This module allows you to modify bootanimation without [meta-overlayfs](https://
 - [📱 • Usage](#--usage)
 - [❓ • How to work?](#--how-to-work)
 
+
+---
+
+# 🌟 • Features
+
+- Dynamic Partition Determination
+- CLI-interface
+- Simple
+
 ---
 
 # 📱 • Tested With
