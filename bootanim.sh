@@ -31,7 +31,8 @@ if [ "$user_command" = 'set' ]; then
 	mkdir -p "$persist_dir"
 	cp -f "$user_anipath" "$bootani_path"
 	chcon "u:object_r:system_file:s0" "$bootani_path"
-	chown 644 "$bootani_path"
+	chown root:root "$bootani_path"
+	chmod 644 "$bootani_path"
 	log_msg "Success!"
 	exit
 elif [ "$user_command" = "reset" ]; then
