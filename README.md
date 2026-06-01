@@ -8,6 +8,8 @@ This module allows you to modify bootanimation without [meta-overlayfs](https://
 >[!CAUTION]
 > I am not responsible for bricked devices, dead SD cards. Flash at your own risk.
 
+> This module compatible with [Magisk](https://github.com/topjohnwu/Magisk), [KernelSU](https://github.com/tiann,/KernelSU), [APatch](https://github.com/bmax121/APatch)
+
 ### 📙 • This documentation includes;
 - [🌟 • Features](#--features)
 - [📱 • Tested With](#--tested-with)
