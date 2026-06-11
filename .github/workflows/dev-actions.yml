@@ -32,7 +32,7 @@ jobs:
         run: |
           COMMIT_HASH=$(git rev-parse --short HEAD)
           ZIP_NAME="bootanim-module-${COMMIT_HASH}.zip"
-          zip -r9 "$ZIP_NAME" *
+          zip -r9 "$ZIP_NAME" -x .git/*
           "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
 
       - name: Upload Artifacts
