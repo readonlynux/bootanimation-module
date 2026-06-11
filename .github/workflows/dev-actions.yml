@@ -5,7 +5,7 @@ name: Development Build
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "latest" branch
-  pull_request:
+  push:
     branches: [ "dev" ]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -32,8 +32,8 @@ jobs:
         run: |
           COMMIT_HASH=$(git rev-parse --short HEAD)
           ZIP_NAME="bootanim-module-${COMMIT_HASH}.zip"
-          zip -r9 "$ZIP_NAME" *
-          "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
+          zip -r9 "$ZIP_NAME" -x .git/*
+          echo "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
