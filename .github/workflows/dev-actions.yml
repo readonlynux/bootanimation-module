@@ -15,7 +15,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
+  # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -32,7 +32,7 @@ jobs:
         run: |
           COMMIT_HASH=$(git rev-parse --short HEAD)
           ZIP_NAME="bootanim-module-${COMMIT_HASH}.zip"
-          zip -r9 "$ZIP_NAME" *
+          zip -r9 "$ZIP_NAME" -x .git/*
           "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
 
       - name: Upload Artifacts
