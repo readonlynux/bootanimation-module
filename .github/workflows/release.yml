@@ -32,4 +32,4 @@ jobs:
           tag_name: ${{ env.VERSION_NAME }}
           name: ${{ env.VERSION_NAME }} | 🌌 Bootanimation Module
           files: ${{ env.ZIP_NAME }}
-          body_path: .github/release.md
+          body_path: latest_changelog.md
