@@ -29,5 +29,7 @@ jobs:
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ env.VERSION_NAME }}
+          name: ${{ env.VERSION_NAME }} | 🌌 Bootanimation Module
           files: ${{ env.ZIP_NAME }}
           body_path: .github/release.md
