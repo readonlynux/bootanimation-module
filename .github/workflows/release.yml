@@ -1,0 +1,33 @@
+name: Production Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Check release.md
+        run: |
+          if [[ ! -f .github/release.md ]]; then
+              exit 1
+          fi
+
+      - name: Create Module ZIP
+        run: |
+          VERSION_NAME="${GITHUB_REF_NAME}"
+          ZIP_NAME="bootanimation-module-${VERSION_NAME}.zip"
+          zip -r9 "$ZIP_NAME" . -x ".git/*" -x ".github/*" -x ".gitignore"
+          echo "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.ZIP_NAME }}
+          body_path: .github/release.md
