@@ -6,6 +6,6 @@
 
 # 📃 CHANGELOG
 
-- A
+- Added on/off status
 
 ---
