@@ -25,7 +25,7 @@ jobs:
         run: |
           FIRST_LINE=$(head -n 1 latest_changelog.md)
           [[ "$FIRST_LINE" == *"[PRE-RELEASE]"* ]] && echo "IS_PRERELEASE=true" >> $GITHUB_ENV
-          sed -i '1d' latest_changelog.md
+          sed -i '2d' latest_changelog.md
 
       - name: Create Module ZIP
         run: |
@@ -40,4 +40,5 @@ jobs:
           tag_name: ${{ github.ref_name }}
           name: ${{ github.ref_name }} | 🌌 Bootanimation Module
           files: ${{ env.ZIP_NAME }}
+          prerelease: ${{ env.IS_PRERELEASE }}
           body_path: latest_changelog.md
