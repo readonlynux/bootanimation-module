@@ -10,6 +10,7 @@ guide(){
 	echo 'bootanim - v0.2-alpha'
 	echo '=========================================='
 	echo 'set - Applies bootanimation.zip'
+	echo 'on/off - Set bootanimation Apply Status'
 	echo 'reset - Resets bootanimation.zip'
 	echo 'help - Shows help menu'
 	echo '=========================================='
