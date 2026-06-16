@@ -39,6 +39,12 @@ if [ "$user_command" = 'set' ]; then
 elif [ "$user_command" = "reset" ]; then
 	[ ! -f "$bootani_path" ] && abort_msg "No custom bootanimation found to remove."
 	rm -rf "$bootani_path"
+elif [ "$user_command" = 'on' ]; then
+	[ ! -f "$persist_dir/disable" ] && abort_msg "Already bootanimation Apply Status Disabled"
+	rm -f "$persist_dir/disable"
+elif [ "$user_command" = 'off' ]; then
+	mkdir -p "$persist_dir"
+	touch "$persist_dir/disable"
 elif [ "$user_command" = 'help' ]; then
 	guide
 else
