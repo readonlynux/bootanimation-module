@@ -25,13 +25,13 @@ jobs:
         run: |
           VERSION_NAME="${GITHUB_REF_NAME}"
           ZIP_NAME="bootanimation-module-${VERSION_NAME}.zip"
-          zip -r9 "$ZIP_NAME" . -x ".git/*" -x ".github/*" -x ".gitignore"
+          zip -r9 "$ZIP_NAME" . -x ".git/*" -x ".github/*" -x ".gitignore" -x latest_changelog.md
           echo "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
 
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ env.VERSION_NAME }}
-          name: ${{ env.VERSION_NAME }} | 🌌 Bootanimation Module
+          tag_name: ${{ github.ref_name }}
+          name: ${{ github.ref_name }} | 🌌 Bootanimation Module
           files: ${{ env.ZIP_NAME }}
           body_path: latest_changelog.md
