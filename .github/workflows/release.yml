@@ -21,6 +21,12 @@ jobs:
               exit 1
           fi
 
+      - name: Determine Release Type from Changelog
+        run: |
+          FIRST_LINE=$(head -n 1 latest_changelog.md)
+          [[ "$FIRST_LINE" == *"[PRE-RELEASE]"* ]] && echo "IS_PRERELEASE=true" >> $GITHUB_ENV
+          sed -i '1d' latest_changelog.md
+
       - name: Create Module ZIP
         run: |
           VERSION_NAME="${GITHUB_REF_NAME}"
