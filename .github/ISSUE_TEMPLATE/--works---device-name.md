@@ -1,8 +1,8 @@
 ---
 name: "[ WORKS ] Device name"
-about: ''
+about: "..."
 title: ''
-labels: ''
+labels: works
 assignees: ''
 
 ---
