@@ -4,15 +4,19 @@ bootani_path=$persist_dir/bootanimation.zip
 user_command="$1"
 user_anipath="$2"
 
+
 # ======== functions ========
-guide(){
-	echo '=========================================='
-	echo 'bootanim - v0.2-alpha'
-	echo '=========================================='
-	echo 'set - Applies bootanimation.zip'
-	echo 'reset - Resets bootanimation.zip'
-	echo 'help - Shows help menu'
-	echo '=========================================='
+help_menu(){
+	echo '==================================================='
+	echo 'bootanim <command> [arg]                 v0.3.alpha'
+	echo '==================================================='
+	echo 'set       Apply bootanimation.zip'
+	echo 'enable    Enable automatic applying'
+	echo 'disable   Disable automatic applying'
+	echo 'reset     Remove custom bootanimation'
+	echo 'state     Show current bootanimation apply state'
+	echo 'help      Show help menu'
+	echo '==================================================='
 }
 abort_msg(){
 	local abortInp="$@"
@@ -33,14 +37,24 @@ if [ "$user_command" = 'set' ]; then
 	chcon "u:object_r:system_file:s0" "$bootani_path"
 	chown root:root "$bootani_path"
 	chmod 644 "$bootani_path"
-	log_msg "Success!"
+	log_msg "Successfully bootanimation changed"
 	exit
 elif [ "$user_command" = "reset" ]; then
 	[ ! -f "$bootani_path" ] && abort_msg "No custom bootanimation found to remove."
 	rm -rf "$bootani_path"
+elif [ "$user_command" = 'enable' ]; then
+	[ ! -f "$persist_dir/disable" ] && abort_msg "Bootanimation automatically applying"
+	rm -f "$persist_dir/disable"
+elif [ "$user_command" = 'disable' ]; then
+	mkdir -p "$persist_dir"
+	touch "$persist_dir/disable"
+elif [ "$user_command" = 'state' ]; then
+	[ -f "$persist_dir/disable" ] && echo 'Currently not automatically applying bootanimation'
+	[ ! -f "$persist_dir/disable" ] && echo 'Currently automatically applying bootanimation'
+	exit
 elif [ "$user_command" = 'help' ]; then
-	guide
+	help_menu
 else
-	guide
+	help_menu
 	exit 1
 fi

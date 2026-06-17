@@ -41,7 +41,9 @@ This module allows you to modify bootanimation without [meta-overlayfs](https://
 
 **ROM:** Evolution-X 10.6
 
-**Module Version:** v0.2-alpha
+**Module Version:** v0.3-alpha
+
+[Other device reports](https://github.com/readonlynux/bootanimation-module/issues?q=state%3Aopen%20label%3Aworks)
 
 ---
 
