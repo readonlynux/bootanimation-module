@@ -6,14 +6,15 @@ user_anipath="$2"
 
 # ======== functions ========
 guide(){
-	echo '=========================================='
-	echo 'bootanim - v0.2-alpha'
-	echo '=========================================='
-	echo 'set - Applies bootanimation.zip'
-	echo 'on/off - Set bootanimation Apply Status'
-	echo 'reset - Resets bootanimation.zip'
-	echo 'help - Shows help menu'
-	echo '=========================================='
+	echo '==================================================='
+	echo 'bootanim <command> [arg]                 v0.2-alpha'
+	echo '==================================================='
+	echo 'set       Apply bootanimation.zip'
+	echo 'enable    Enable automatic applying'
+	echo 'disable   Disable automatic applying'
+	echo 'reset     Remove custom bootanimation'
+	echo 'help      Show help menu'
+	echo '==================================================='
 }
 abort_msg(){
 	local abortInp="$@"
