@@ -6,6 +6,7 @@
 
 # 📃 CHANGELOG
 
-- Added on/off status
+- Added enable/disable bootanimation
+- Improvements
 
 ---
