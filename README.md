@@ -8,7 +8,7 @@ This module allows you to modify bootanimation without requiring [meta-overlayfs
 >[!CAUTION]
 > I am not responsible for bricked devices, dead SD cards, or any damage caused by using this module. Use it at your own risk.
 
-> This module is compatible with [Magisk](https://github.com/topjohnwu/Magisk), [KernelSU](https://github.com/tiann,/KernelSU), [APatch](https://github.com/bmax121/APatch)
+> This module is compatible with [Magisk](https://github.com/topjohnwu/Magisk), [KernelSU](https://github.com/tiann/KernelSU), [APatch](https://github.com/bmax121/APatch)
 
 ### 📙 • This documentation includes;
 - [🌟 • Features](#--features)
@@ -70,7 +70,7 @@ This module allows you to modify bootanimation without requiring [meta-overlayfs
 # 📱 • Usage
 
 ```bash
-bootanim set /path/to/bootanimation.zip
+bootanim help
 ```
 
 ---
