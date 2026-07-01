@@ -6,7 +6,6 @@
 
 # 📃 CHANGELOG
 
-- Added enable/disable bootanimation
-- Improvements
+- General grammar improvements
 
 ---
