@@ -33,7 +33,7 @@ This module allows you to modify bootanimation without requiring [meta-overlayfs
 
 **Root Manager:** KernelSU
 
-**Manager Version:** v3.2.4 (32457)
+**Manager Version:** v3.2.5 (32525-2)
 
 **Device:** Xiaomi Redmi Note 12 4G (tapas)
 
