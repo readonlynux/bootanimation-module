@@ -23,9 +23,12 @@ This module allows you to modify bootanimation without requiring [meta-overlayfs
 
 # 🌟 • Features
 
+- No OverlayFS required
+- Supports Magisk
+- Supports KernelSU
+- Supports APatch
 - Dynamic Partition Determination
-- CLI-interface
-- Simple
+- Simple CLI
 
 ---
 
