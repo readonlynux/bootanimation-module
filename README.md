@@ -3,7 +3,7 @@
 
 #  🌌 • Bootanimation Module without OverlayFS
 
-English | [Turkish](README-tr.md)
+English | [Türkçe](README-tr.md)
 
 ---
 
