@@ -3,6 +3,10 @@
 
 #  🌌 • Bootanimation Module without OverlayFS
 
+[English](README.md) | Türkçe
+
+---
+
 Bu modül [meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlayfs) ve [Magisk Magic Mount](https://topjohnwu.github.io/Magisk/details.html)'a gerek kalmadan bootanimasyonunu modifiye etmenizi sağlar.
 
 >[!CAUTION]
