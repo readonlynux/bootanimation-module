@@ -3,12 +3,14 @@
 
 #  🌌 • Bootanimation Module without OverlayFS
 
+English | [Turkish](README-tr.md)
+
 This module allows you to modify bootanimation without requiring [meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlayfs) or [Magisk Magic Mount](https://topjohnwu.github.io/Magisk/details.html)
 
 >[!CAUTION]
 > I am not responsible for bricked devices, dead SD cards, or any damage caused by using this module. Use it at your own risk.
 
-> This module is compatible with [Magisk](https://github.com/topjohnwu/Magisk), [KernelSU](https://github.com/tiann/KernelSU), [APatch](https://github.com/bmax121/APatch)
+> This module is compatible with [Magisk](https://github.com/topjohnwu/Magisk), [KernelSU](https://github.com/tiann/KernelSU) and [APatch](https://github.com/bmax121/APatch)
 
 ### 📙 • This documentation includes;
 - [🌟 • Features](#--features)
@@ -17,6 +19,7 @@ This module allows you to modify bootanimation without requiring [meta-overlayfs
 - [🔧📲 • Setup](#--setup)
 - [📱 • Usage](#--usage)
 - [❓ • How does it work](#--how-does-it-work)
+- [🤝 • Credits](#--credits)
 
 
 ---
