@@ -33,7 +33,7 @@ Bu modül [meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlay
 - KernelSU'yu destekler
 - APatch'i destekler
 - WebUI (Deneysel)
-- Dinamik Partitisyon Belirleme
+- Dinamik Bölüm Belirleme
 - Basit CLI
 
 ---
@@ -61,7 +61,7 @@ Bu modül [meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlay
 - Son sürümü [yayınlar](https://github.com/readonlynux/bootanimation-module/releases/latest) üzerinden indirin
 - Kök yönetici uygulamanızı açın
 - *Modüller* bölümüne gidin
-- *Depolama alanından indirin*e tıklayın
+- *Depolama alanından yükleyim*e tıklayın
 - Modülü seçin
 - Cihazı yeniden başlatın
 
