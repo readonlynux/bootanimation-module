@@ -1,10 +1,10 @@
 [PRE-RELEASE]
 
-# 🌌 • Bootanimation Changer without OverlayFS
+# 🌌 • Bootanimation Module without OverlayFS
 
 ---
 
-# 📃 CHANGELOG
+# 📃 • CHANGELOG
 
 - General grammar improvements
 
