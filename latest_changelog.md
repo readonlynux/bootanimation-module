@@ -7,5 +7,6 @@
 # 📃 • CHANGELOG
 
 - General grammar improvements
+- Add log message for disabling bootanimation
 
 ---
