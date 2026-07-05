@@ -5,6 +5,8 @@
 
 English | [Turkish](README-tr.md)
 
+---
+
 This module allows you to modify bootanimation without requiring [meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlayfs) or [Magisk Magic Mount](https://topjohnwu.github.io/Magisk/details.html)
 
 >[!CAUTION]
