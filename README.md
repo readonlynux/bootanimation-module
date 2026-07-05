@@ -1,7 +1,7 @@
 
 ---
 
-#  🌌 • Bootanimation Changer without OverlayFS
+#  🌌 • Bootanimation Module without OverlayFS
 
 This module allows you to modify bootanimation without [meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlayfs) and [Magisk Magic Mount](https://topjohnwu.github.io/Magisk/details.html)
 
