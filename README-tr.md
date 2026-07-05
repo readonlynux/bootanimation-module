@@ -88,7 +88,7 @@ bootanim help
 
 `bootanim` komutu bootanimasyon dosyasını, `/data/adb/bootanimation` klasörüne kopyalar.
 
-Her yeniden başlatmada, `post-fs-data.sh` yürütülür ve `bootanimation.zip`.
+Her yeniden başlatmada, `post-fs-data.sh` yürütülür ve `bootanimation.zip` bağlanır.
 
 ---
 
