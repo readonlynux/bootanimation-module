@@ -85,3 +85,7 @@ The `bootanim` command copies the selected boot animation to `/data/adb/bootanim
 On every reboot, `post-fs-data.sh` runs and bind-mounts `bootanimation.zip`.
 
 ---
+
+# 🤝 • Credits
+
+Material Icons by Google are used in this project under the Apache License 2.0.
