@@ -72,7 +72,7 @@ Bu modül [meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlay
 - Bir terminal emülatörü indirin (örneğin [Termux](https://f-droid.org/en/packages/com.termux/)) 
 - Ve `su` komutunu terminal emülatörü üzerinden girin
 -  Süper (Kök) kullanıcı yetkisini verin
-	- Eğer KernelSU kullanıyoesanız, süper kullanıcı yetkisini uygulama üzerinden verin.
+	- Eğer KernelSU kullanıyorsanız, süper kullanıcı yetkisini uygulama üzerinden verin.
 
 ---
 
