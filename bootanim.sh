@@ -46,7 +46,7 @@ elif [ "$user_command" = 'enable' ]; then
 	rm -f "$persist_dir/disable" && log_msg 'Custom bootanimation enabled'	
 elif [ "$user_command" = 'disable' ]; then
 	mkdir -p "$persist_dir"
-	touch "$persist_dir/disable"
+	touch "$persist_dir/disable" && log_msg 'Custom bootanimation disabled'
 elif [ "$user_command" = 'state' ]; then
 	[ -f "$persist_dir/disable" ] && echo 'State: disabled'
 	[ ! -f "$persist_dir/disable" ] && echo 'State: enabled'
