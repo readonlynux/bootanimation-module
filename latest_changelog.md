@@ -2,6 +2,9 @@
 
 # 🌌 • Bootanimation Module without OverlayFS
 
+>[!IMPORTANT]
+>The module has been renamed. Delete the old version and install this version.
+
 ---
 
 # 📃 • CHANGELOG
