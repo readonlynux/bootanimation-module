@@ -3,12 +3,12 @@
 
 #  🌌 • Bootanimation Module without OverlayFS
 
-This module allows you to modify bootanimation without [meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlayfs) and [Magisk Magic Mount](https://topjohnwu.github.io/Magisk/details.html)
+This module allows you to modify bootanimation without requiring [meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlayfs) or [Magisk Magic Mount](https://topjohnwu.github.io/Magisk/details.html)
 
 >[!CAUTION]
-> I am not responsible for bricked devices, dead SD cards. Flash at your own risk.
+> I am not responsible for bricked devices, dead SD cards, or any damage caused by using this module. Use it at your own risk.
 
-> This module compatible with [Magisk](https://github.com/topjohnwu/Magisk), [KernelSU](https://github.com/tiann,/KernelSU), [APatch](https://github.com/bmax121/APatch)
+> This module is compatible with [Magisk](https://github.com/topjohnwu/Magisk), [KernelSU](https://github.com/tiann/KernelSU), [APatch](https://github.com/bmax121/APatch)
 
 ### 📙 • This documentation includes;
 - [🌟 • Features](#--features)
@@ -16,16 +16,20 @@ This module allows you to modify bootanimation without [meta-overlayfs](https://
 - [🖥️📲 • How to install module?](#%EF%B8%8F--how-to-install-module)
 - [🔧📲 • Setup](#--setup)
 - [📱 • Usage](#--usage)
-- [❓ • How to work?](#--how-to-work)
+- [❓ • How does it work](#--how-does-it-work)
 
 
 ---
 
 # 🌟 • Features
 
+- No OverlayFS required
+- Supports Magisk
+- Supports KernelSU
+- Supports APatch
+- WebUI (Experimental)
 - Dynamic Partition Determination
-- CLI-interface
-- Simple
+- Simple CLI
 
 ---
 
@@ -33,7 +37,7 @@ This module allows you to modify bootanimation without [meta-overlayfs](https://
 
 **Root Manager:** KernelSU
 
-**Manager Version:** v3.2.4 (32457)
+**Manager Version:** v3.2.5 (32525-2)
 
 **Device:** Xiaomi Redmi Note 12 4G (tapas)
 
@@ -49,12 +53,12 @@ This module allows you to modify bootanimation without [meta-overlayfs](https://
 
 # 🖥️📲 • How to install module?
 
-- Firstly, get module from [releases](https://github.com/readonlynux/bootanimation-module/releases/latest)
+- Download the latest from [releases](https://github.com/readonlynux/bootanimation-module/releases/latest)
 - Open your Root Manager app
 - Go to *Modules* section
 - Click *Install from storage*
 - Select the module
-- Finally, reboot the device
+- Reboot your device
 
 ---
 
@@ -70,14 +74,19 @@ This module allows you to modify bootanimation without [meta-overlayfs](https://
 # 📱 • Usage
 
 ```bash
-bootanim set /path/to/bootanimation.zip
+bootanim help
 ```
 
 ---
 
-# ❓ • How to work?
+# ❓ • How does it work
 
-The `bootanim` command copies the bootanimation file you selected to the `/data/adb/bootanimation` folder.`post-fs-data.sh` script runs on each reboot and binds `bootanimation.zip` to `/system/product/media/bootanimation.zip`.
+The `bootanim` command copies the selected boot animation to `/data/adb/bootanimation`.
 
+On every reboot, `post-fs-data.sh` runs and bind-mounts `bootanimation.zip`.
 
 ---
+
+# 🤝 • Credits
+
+Material Icons by Google are used in this project under the Apache License 2.0.

@@ -1,12 +1,15 @@
 [PRE-RELEASE]
 
-# 🌌 • Bootanimation Changer without OverlayFS
+# 🌌 • Bootanimation Module without OverlayFS
+
+>[!IMPORTANT]
+>The module has been renamed. Delete the old version and install this version.
 
 ---
 
-# 📃 CHANGELOG
+# 📃 • CHANGELOG
 
-- Added enable/disable bootanimation
-- Improvements
+- General grammar improvements
+- Add log message for disabling bootanimation (bootanim.sh)
 
 ---

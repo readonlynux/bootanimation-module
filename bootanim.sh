@@ -8,13 +8,13 @@ user_anipath="$2"
 # ======== functions ========
 help_menu(){
 	echo '==================================================='
-	echo 'bootanim <command> [arg]                 v0.3.alpha'
+	echo 'bootanim <command> [arg]                 v1.0.alpha'
 	echo '==================================================='
 	echo 'set       Apply bootanimation.zip'
-	echo 'enable    Enable automatic applying'
-	echo 'disable   Disable automatic applying'
+	echo 'enable    Enable custom bootanimation'
+	echo 'disable   Disable custom bootanimation'
 	echo 'reset     Remove custom bootanimation'
-	echo 'state     Show current bootanimation apply state'
+	echo 'state     Show bootanimation apply status'
 	echo 'help      Show help menu'
 	echo '==================================================='
 }
@@ -29,28 +29,27 @@ log_msg(){
 }
 
 # ======== main ========
-[ "$(id -u)" != "0" ] && abort_msg "Run again with superuser privileges!"
+[ "$(id -u)" != "0" ] && abort_msg 'Superuser privileges are required!'
 if [ "$user_command" = 'set' ]; then
-	[ ! -f "$user_anipath" ] && abort_msg "Bootanimation file not found!"
+	[ ! -f "$user_anipath" ] && abort_msg 'Bootanimation file not found!'
 	mkdir -p "$persist_dir"
 	cp -f "$user_anipath" "$bootani_path"
 	chcon "u:object_r:system_file:s0" "$bootani_path"
 	chown root:root "$bootani_path"
 	chmod 644 "$bootani_path"
-	log_msg "Successfully bootanimation changed"
+	log_msg 'Bootanimation applied succesfully'
 	exit
-elif [ "$user_command" = "reset" ]; then
-	[ ! -f "$bootani_path" ] && abort_msg "No custom bootanimation found to remove."
-	rm -rf "$bootani_path"
+elif [ "$user_command" = 'reset' ]; then
+	[ ! -f "$bootani_path" ] && abort_msg 'No custom bootanimation found to remove'
+	rm -f "$bootani_path"
 elif [ "$user_command" = 'enable' ]; then
-	[ ! -f "$persist_dir/disable" ] && abort_msg "Bootanimation automatically applying"
-	rm -f "$persist_dir/disable"
+	rm -f "$persist_dir/disable" && log_msg 'Custom bootanimation enabled'	
 elif [ "$user_command" = 'disable' ]; then
 	mkdir -p "$persist_dir"
-	touch "$persist_dir/disable"
+	touch "$persist_dir/disable" && log_msg 'Custom bootanimation disabled'
 elif [ "$user_command" = 'state' ]; then
-	[ -f "$persist_dir/disable" ] && echo 'Currently not automatically applying bootanimation'
-	[ ! -f "$persist_dir/disable" ] && echo 'Currently automatically applying bootanimation'
+	[ -f "$persist_dir/disable" ] && echo 'State: disabled'
+	[ ! -f "$persist_dir/disable" ] && echo 'State: enabled'
 	exit
 elif [ "$user_command" = 'help' ]; then
 	help_menu
