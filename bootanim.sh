@@ -43,14 +43,14 @@ elif [ "$user_command" = 'reset' ]; then
 	[ ! -f "$bootani_path" ] && abort_msg 'No custom bootanimation found to remove'
 	rm -f "$bootani_path"
 elif [ "$user_command" = 'enable' ]; then
-	rm -f "$persist_dir/disable" && log_msg 'Custom bootanimation enabled'	
+	rm -f "$persist_dir/disable" && log_msg  'Custom bootanimation enabled'	
 elif [ "$user_command" = 'disable' ]; then
 	mkdir -p "$persist_dir"
 	touch "$persist_dir/disable" && log_msg 'Custom bootanimation disabled'
 elif [ "$user_command" = 'state' ]; then
-	[ -f "$persist_dir/disable" ] && echo 'State: disabled'
-	[ ! -f "$persist_dir/disable" ] && echo 'State: enabled'
-	exit
+	[ ! -f "$persist_dir/bootanimation.zip" ] && log_msg 'State: No custom bootanimation' && exit
+	[ -f "$persist_dir/disable" ] && log_msg 'State: disabled'
+	[ ! -f "$persist_dir/disable" ] && log_msg 'State: enabled'
 elif [ "$user_command" = 'help' ]; then
 	help_menu
 else
