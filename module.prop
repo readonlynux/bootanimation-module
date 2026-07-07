@@ -1,6 +1,6 @@
 id=bootanimation-module-ronux
 name=Bootanimation
-version=v1.0-alpha
-versionCode=4
+version=v1.0-stable
+versionCode=5
 author=readonlynux
 description=Bootanimation changer without OverlayFS
