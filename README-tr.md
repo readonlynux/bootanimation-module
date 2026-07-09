@@ -61,7 +61,7 @@ Bu modül [meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlay
 - Son sürümü [yayınlar](https://github.com/readonlynux/bootanimation-module/releases/latest) üzerinden indirin
 - Kök yönetici uygulamanızı açın
 - *Modüller* bölümüne gidin
-- *Depolama alanından yükleyim*e tıklayın
+- *Depolama alanından yükleyin*e tıklayın
 - Modülü seçin
 - Cihazı yeniden başlatın
 
