@@ -1,3 +1,4 @@
+#!/system/bin/sh
 persist_dir="/data/adb/bootanimation"
 
 ui_print '- Installing Bootanimation Changer without OverlayFS'
