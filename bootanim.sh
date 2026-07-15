@@ -36,7 +36,7 @@ if [ "$user_command" = 'set' ]; then
 	[ ! -f "$user_anipath" ] && abort_msg 'Bootanimation file not found!'
 	mkdir -p "$persist_dir"
 	if [ ! -f "$persist_dir/bootanimation_path.txt" ]; then
-		$MODDIR/create_bootanimation_filepath.sh
+		$MODDIR/create_bootanimation_pathfile.sh
 		[ "$?" = "404" ] && abort_msg "Bootanimation file was not found in the system path"
 	fi
 	cp -f "$user_anipath" "$bootani_path"
