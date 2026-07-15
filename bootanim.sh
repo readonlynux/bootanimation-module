@@ -2,6 +2,7 @@
 
 # ======== variables ========
 persist_dir=/data/adb/bootanimation
+MODDIR=/data/adb/modules/bootanimation-module-ronux
 bootani_path=$persist_dir/bootanimation.zip
 user_command="$1"
 user_anipath="$2"
