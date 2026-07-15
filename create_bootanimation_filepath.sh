@@ -11,5 +11,5 @@ if [ -n "$TARGET_PATH" ]; then
 	mkdir -p "$persist_dir"
 	echo "$TARGET_PATH" >"$persist_dir/bootanimation_path.txt"
 else
-	exit 1
+	exit 404
 fi
