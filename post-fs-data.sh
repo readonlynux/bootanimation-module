@@ -7,6 +7,7 @@ system_path="$(cat "/data/adb/bootanimation/bootanimation_path.txt")"
 if [ ! -f "$bootani_file" ]; then
 	exit 1
 elif [ -f "$bootani_file" ]; then
+	[ ! -f "$system_path" ] && exit 1
 	umount -l "$system_path"
 	mount --bind "$bootani_file" "$system_path"
 fi
