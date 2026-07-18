@@ -14,32 +14,39 @@
             --md-sys-color-surface-container-high: #24292a;
             --md-sys-color-error: #ffb4ab;
         }
-
-        body { 
-            background-color: var(--md-sys-color-surface); 
-            color: var(--md-sys-color-on-surface); 
-            font-family: system-ui, -apple-system, sans-serif; 
-            margin: 0; 
-            padding: 16px; 
+        body {
+            background-color: var(--md-sys-color-surface);
+            color: var(--md-sys-color-on-surface);
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 16px;
             -webkit-tap-highlight-color: transparent;
         }
         h2 {
             font-size: 24px;
             font-weight: 400;
-            margin-bottom: 24px;
+            margin-bottom: 8px;
             letter-spacing: 0px;
         }
-        button { 
-            background-color: var(--md-sys-color-primary); 
-            color: var(--md-sys-color-on-primary); 
-            border: none; 
-            padding: 16px 24px; 
-            font-family: inherit; 
-            font-size: 14px; 
+        #status-display {
+            font-size: 15px;
+            margin-bottom: 24px;
+            padding: 8px 12px;
+            background-color: var(--md-sys-color-surface-container);
+            border-radius: 8px;
+            display: inline-block;
+        }
+        button {
+            background-color: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+            border: none;
+            padding: 16px 24px;
+            font-family: inherit;
+            font-size: 14px;
             font-weight: 500;
-            cursor: pointer; 
+            cursor: pointer;
             border-radius: 100px;
-            width: 100%; 
+            width: 100%;
             margin-bottom: 12px;
             transition: opacity 0.2s, transform 0.1s;
             display: flex;
@@ -54,15 +61,14 @@
             background-color: var(--md-sys-color-surface-container-high);
             color: var(--md-sys-color-on-surface);
         }
-
-        .list-item { 
+        .list-item {
             display: flex;
             align-items: center;
-            padding: 16px; 
+            padding: 16px;
             margin-bottom: 4px;
             background-color: var(--md-sys-color-surface-container);
             border-radius: 16px;
-            cursor: pointer; 
+            cursor: pointer;
             word-break: break-all;
             transition: background-color 0.2s;
         }
@@ -74,157 +80,46 @@
             margin-right: 16px;
             flex-shrink: 0;
         }
-
         .item-text {
             font-size: 16px;
             font-weight: 400;
             letter-spacing: 0.5px;
         }
-
         #picker-screen { display: none; }
-
-        #current-path-card { 
+        #current-path-card {
             background-color: var(--md-sys-color-surface-container-high);
             padding: 12px 16px;
             border-radius: 12px;
             margin-bottom: 16px;
             font-family: monospace;
             font-size: 13px;
-            color: var(--md-sys-color-primary); 
-            word-wrap: break-word; 
+            color: var(--md-sys-color-primary);
+            word-wrap: break-word;
         }
     </style>
 </head>
 <body>
-
     <div id="main-screen">
         <h2>Bootanimation Module Without OverlayFS</h2>
-        <button onclick="openPicker()">Select Bootanimation (.zip)</button>
+         
+        <div id="status-display">Checking status...</div>
+
+        <button onclick="openPicker()">Select Custom Bootanimation (.zip)</button>
+	<button class="btn-secondary" onclick="confirmAndReset()">Reset Bootanimation</button>
+         
+        <button id="btn-enable" onclick="confirmAndEnable()" style="display: none;">Enable Custom Bootanimation</button>
+        <button id="btn-disable" onclick="confirmAndDisable()" style="display: none;">Disable Custom Bootanimation</button>
     </div>
 
     <div id="picker-screen">
         <div id="current-path-card"></div>
-        <button id="btn-up" class="btn-secondary" onclick="goUp()">⬆️ Go Up</button>
-        <button class="btn-secondary" onclick="closePicker()">❌ Cancel</button>
+        <button id="btn-up" class="btn-secondary" onclick="goUp()">Go Up</button>
+        <button class="btn-secondary" onclick="closePicker()">Cancel</button>
         
-        <div style="height: 8px;"></div> <div id="file-list"></div>
+        <div style="height: 8px;"></div>
+        <div id="file-list"></div>
     </div>
 
-    <script>
-	alert("This feature is experimental! Use it at your own risk.");
-        const BASE_DIR = "/sdcard/";
-        let currentPath = BASE_DIR;
-
-        async function runKsuCmd(cmd) {
-            try {
-                let rawRes = await window.ksu.exec(cmd);
-                if (typeof rawRes === "string") {
-                    try {
-                        let res = JSON.parse(rawRes);
-                        return { errno: res.errno || 0, stdout: res.stdout || "", stderr: res.stderr || "" };
-                    } catch (e) {
-                        return { errno: 0, stdout: rawRes, stderr: "" }; 
-                    }
-                }
-                return { errno: rawRes.errno || 0, stdout: rawRes.stdout || "", stderr: rawRes.stderr || "" };
-            } catch (err) {
-                return { errno: -1, stdout: "", stderr: err.toString() };
-            }
-        }
-
-        function openPicker() {
-            document.getElementById('main-screen').style.display = 'none';
-            document.getElementById('picker-screen').style.display = 'block';
-            loadDirectory(BASE_DIR);
-        }
-
-        function closePicker() {
-            document.getElementById('picker-screen').style.display = 'none';
-            document.getElementById('main-screen').style.display = 'block';
-        }
-
-        function goUp() {
-            if (currentPath === BASE_DIR) return;
-            let parts = currentPath.split("/").filter(p => p !== "");
-            parts.pop();
-            let newPath = "/" + parts.join("/") + "/";
-            if (!newPath.startsWith(BASE_DIR)) newPath = BASE_DIR;
-            loadDirectory(newPath);
-        }
-
-        async function loadDirectory(path) {
-            currentPath = path;
-            document.getElementById('current-path-card').innerText = currentPath;
-            document.getElementById('btn-up').disabled = (currentPath === BASE_DIR);
-
-            const fileListDiv = document.getElementById('file-list');
-            fileListDiv.innerHTML = "<div style='padding:16px; text-align:center;'>Loading...</div>";
-
-            let cmd = `sh -c "cd / && ls -p '${currentPath}' 2>&1 | tr '\n' '|'"`;
-            let res = await runKsuCmd(cmd);
-            
-            let items = res.stdout.split("|").filter(item => item.trim() !== "");
-            fileListDiv.innerHTML = ""; 
-
-            if (items.length > 0 && items[0].toLowerCase().includes("permission denied")) {
-                 fileListDiv.innerHTML = `<div style="color:var(--md-sys-color-error); padding:16px; text-align:center;">Root read permission denied</div>`;
-                 return;
-            }
-
-            if (items.length === 0) {
-                fileListDiv.innerHTML = "<div style='color:#747778; padding:16px; text-align:center;'>Empty Directory</div>";
-                return;
-            }
-
-            items.forEach(item => {
-                let div = document.createElement("div");
-                div.className = "list-item";
-                
-                let iconImg = document.createElement("img");
-                iconImg.className = "list-icon";
-
-                let textSpan = document.createElement("span");
-                textSpan.className = "item-text";
-                textSpan.innerText = item;
-                
-                if (item.endsWith("/")) {
-                    iconImg.src = "assets/folder.svg";
-                    div.onclick = () => loadDirectory(currentPath + item);
-                } else if (item.toLowerCase().endsWith(".zip")) {
-                    iconImg.src = "assets/file.svg";
-                    div.onclick = () => confirmAndApply(currentPath + item);
-                } else {
-                    iconImg.src = "assets/file.svg";
-                    div.style.opacity = "0.4";                }
-                
-                div.appendChild(iconImg);
-                div.appendChild(textSpan);
-                fileListDiv.appendChild(div);
-            });
-        }
-
-        async function confirmAndApply(filePath) {
-            let userConfirm = confirm(`Apply this bootanimation?\n\n${filePath}`);
-            if (!userConfirm) return;
-
-            document.getElementById('file-list').innerHTML = "<div style='padding:16px; text-align:center; color:var(--md-sys-color-primary);'>Applying... Please wait.</div>";
-
-	    let safeFilePath = filePath.replace(/'/g, "'\\'");
-
-            let cmd = `sh -c "cd / && bootanim set '${safeFilePath}' 2>&1 | tr '\n' '|'"`;
-            let res = await runKsuCmd(cmd);
-            
-            let cleanOutput = res.stdout.replace(/\|/g, "\n").trim();
-            
-            if (cleanOutput.toLowerCase().includes("not found") || cleanOutput.toLowerCase().includes("fail")) {
-                alert("Error applying bootanimation:\n" + cleanOutput);
-            } else {
-                alert("Success! Bootanimation applied.\n\n" + cleanOutput);
-                closePicker();
-            }
-            
-            loadDirectory(currentPath);
-        }
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
