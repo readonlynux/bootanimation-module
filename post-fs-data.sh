@@ -2,7 +2,6 @@
 MODDIR=${0%/*}
 persist_dir=/data/adb/bootanimation
 bootani_file=$persist_dir/bootanimation.zip
-[ ! -f "$persist_dir/bootanimation_path.txt" ] && exit 1
 system_path="$(cat "$persist_dir/bootanimation_path.txt")"
 
 [ -f "$persist_dir/disable" ] && exit
