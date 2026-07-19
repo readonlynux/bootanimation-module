@@ -16,6 +16,7 @@ This module allows you to modify bootanimation without requiring [meta-overlayfs
 
 ### 📙 • This documentation includes;
 - [🌟 • Features](#--features)
+- [📸 • WebUI](#--webui)
 - [📱 • Tested With](#--tested-with)
 - [🖥️📲 • How to install module?](#%EF%B8%8F--how-to-install-module)
 - [🔧📲 • Setup](#--setup)
@@ -28,6 +29,7 @@ This module allows you to modify bootanimation without requiring [meta-overlayfs
 
 # 🌟 • Features
 
+- Lightweight (Shell-based)
 - No OverlayFS required
 - Supports Magisk
 - Supports KernelSU
@@ -35,6 +37,18 @@ This module allows you to modify bootanimation without requiring [meta-overlayfs
 - WebUI (Experimental)
 - Dynamic Partition Determination
 - Simple CLI
+
+---
+
+# 📸 • WebUI
+
+<details markdown='1'><summary>Show WebUI Screenshots</summary>
+
+| Home Page (enabled) | Home Page (disabled) | Home Page (No custom) | File Picker |
+| :---: | :---: | :---: | :---: |
+| <img src="docs/assets/webui_homepage_enabled.png" width="200" /> | <img src="docs/assets/webui_homepage_disabled.png" width="200" /> | <img src="docs/assets/webui_homepage_nocustom.png" width="200" /> | <img src="docs/assets/webui_filepicker.png" width="200" |
+
+</details>
 
 ---
 

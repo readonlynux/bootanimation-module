@@ -38,6 +38,18 @@ Bu modül [meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlay
 
 ---
 
+# 📸 WebUI
+
+<details markdown='1'><summary>WebUI görüntülerini göster</summary>
+
+| Anasayfa (etkin) | Anasayfa (devre dışı) | Anasayfa (Ayarlanmamış) | Dosya Seçim Sayfası |
+| :---: | :---: | :---: | :---: |
+| <img src="docs/assets/webui_homepage_enabled.png" width="200" /> | <img src="docs/assets/webui_homepage_disabled.png" width="200" /> | <img src="docs/assets/webui_homepage_nocustom.png" /> | <img src="docs/assets/webui_filepicker.png" width="200" |
+
+</details>
+
+---
+
 # 📱 • Test Edilmiş Cihazlar
 
 **Kök Yöneticisi:** KernelSU
