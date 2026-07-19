@@ -44,9 +44,13 @@ This module allows you to modify bootanimation without requiring [meta-overlayfs
 
 <details markdown='1'><summary>Show WebUI Screenshots</summary>
 
-| Home Page (enabled) | Home Page (disabled) | Home Page (No custom) | File Picker |
-| :---: | :---: | :---: | :---: |
-| <img src="docs/assets/webui_homepage_enabled.png" width="200" /> | <img src="docs/assets/webui_homepage_disabled.png" width="200" /> | <img src="docs/assets/webui_homepage_nocustom.png" width="200" /> | <img src="docs/assets/webui_filepicker.png" width="200" |
+| Home Page (enabled) | Home Page (disabled) |
+| :---: | :---: |
+| <img src="docs/assets/webui_homepage_enabled.png" width="200" /> | <img src="docs/assets/webui_homepage_disabled.png" width="200" /> |
+
+| Homepage (No custom) | File Picker |
+| :---: | :---: |
+| <img src="docs/assets/webui_homepage_nocustom.png" width="200" /> | <img src="docs/assets/webui_filepicker.png" width="200" /> |
 
 </details>
 
