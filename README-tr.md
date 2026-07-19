@@ -28,6 +28,7 @@ Bu modül [meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlay
 
 # 🌟 • Özellikler
 
+- Hafif (shell tabanlı)
 - OverlayFS gerekmez
 - Magisk'i destekler
 - KernelSU'yu destekler
