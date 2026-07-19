@@ -56,7 +56,7 @@ This module allows you to modify bootanimation without requiring [meta-overlayfs
 
 ---
 
-# 📱 • Tested With
+# 📱 • Tested On
 
 **Root Manager:** KernelSU
 
