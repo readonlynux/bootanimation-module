@@ -47,7 +47,7 @@ Bu modül [meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlay
 | :---: | :---: |
 | <img src="docs/assets/webui_homepage_enabled.png" width="200" /> | <img src="docs/assets/webui_homepage_disabled.png" width="200" /> |
 
-| Anasayfa (ayarlanmamış) | Anasayfa (devre dışı) |
+| Anasayfa (ayarlanmamış) | Dosya Seçici |
 | :---: | :---: |
 | <img src="docs/assets/webui_homepage_nocustom.png" width="200" /> | <img src="docs/assets/webui_filepicker.png" width="200" /> |
 
