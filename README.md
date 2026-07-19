@@ -17,7 +17,7 @@ This module allows you to modify bootanimation without requiring [meta-overlayfs
 ### 📙 • This documentation includes;
 - [🌟 • Features](#--features)
 - [📸 • WebUI](#--webui)
-- [📱 • Tested With](#--tested-with)
+- [📱 • Tested On](#--tested-on)
 - [🖥️📲 • How to install module?](#%EF%B8%8F--how-to-install-module)
 - [🔧📲 • Setup](#--setup)
 - [📱 • Usage](#--usage)
