@@ -21,7 +21,7 @@ Bu modül [meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlay
 - [🔧📲 • Kurulum](#--kurulum)
 - [📱 • Kullanım](#--kullanım)
 - [❓ • Nasıl çalışır](#--nasıl-çalışır)
-- [🤝 • Lisanslar](#--lisanslar)
+- [🤝 • Katkıda Bulunanlar](#--katkıda-bulunanlar)
 
 
 ---
@@ -109,6 +109,6 @@ Her yeniden başlatmada, `post-fs-data.sh` yürütülür ve `bootanimation.zip` 
 
 ---
 
-# 🤝 • Lisanslar
+# 🤝 • Katkıda Bulunanlar
 
 Google tarafından Material Icons bu projede kullanılmıştır ve Apache License 2.0 ile lisanslanmıştır.
