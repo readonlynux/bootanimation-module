@@ -13,6 +13,7 @@ elif [ -f "$bootani_file" ]; then
 		$MODDIR/create_bootanimation_pathfile.sh
 		exit
 	fi
+	chcon "$(stat -c %C "$system_path")" "$bootani_file" 2>/dev/null
 	umount -l "$system_path"
 	mount --bind "$bootani_file" "$system_path"
 fi
