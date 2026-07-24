@@ -6,7 +6,7 @@ if [ "$KSU" = "true" ]; then
 	ln -sf "$MOD_PATH/bootanim.sh" "/data/adb/ksu/bin/bootanim"
 elif [ "$APATCH" = "true" ]; then
 	ln -sf "$MOD_PATH/bootanim.sh" "/data/adb/ap/bin/bootanim"
-elif [ "$MAGISK" = "true" ]; then
+else
 	[ -w /sbin ] && magisktmp=/sbin
 	[ -w /debug_ramdisk ] && magisktmp=/debug_ramdisk
 	ln -sf "$MOD_PATH/bootanim.sh" "$magisktmp/bootanim"
