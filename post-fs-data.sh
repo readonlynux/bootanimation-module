@@ -3,6 +3,7 @@ MODDIR=${0%/*}
 persist_dir=/data/adb/bootanimation
 bootani_file=$persist_dir/bootanimation.zip
 system_path="$(cat "$persist_dir/bootanimation_path.txt")"
+bootani_con="$(ls -Z "$system_path" 2>/dev/null | awk '{print $1}')"
 
 [ -f "$persist_dir/disable" ] && exit
 if [ ! -f "$bootani_file" ]; then
@@ -13,7 +14,7 @@ elif [ -f "$bootani_file" ]; then
 		$MODDIR/create_bootanimation_pathfile.sh
 		exit
 	fi
-	chcon "$(stat -c %C "$system_path")" "$bootani_file" 2>/dev/null
+	chcon "$bootani_con" "$bootani_file" 2>/dev/null
 	umount -l "$system_path"
 	mount --bind "$bootani_file" "$system_path"
 fi
