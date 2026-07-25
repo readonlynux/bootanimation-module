@@ -70,7 +70,7 @@ This module allows you to modify bootanimation without requiring [meta-overlayfs
 
 **Module Version:** v1.1.1-stable
 
-[Other device reports](https://github.com/readonlynux/bootanimation-module/issues?q=state%3Aopen%20label%3Aworks)
+[Other device reports](https://github.com/readonlynux/bootanimation-module/issues?q=label%3Aworks)
 
 ---
 
