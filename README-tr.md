@@ -69,7 +69,7 @@ Bu modül [meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlay
 
 **Modül Versiyonu:** v1.1.1-stable
 
-[Diğer Cihaz İncelemeleri](https://github.com/readonlynux/bootanimation-module/issues?q=state%3Aopen%20label%3Aworks)
+[Diğer Cihaz İncelemeleri](https://github.com/readonlynux/bootanimation-module/issues?q=label%3Aworks)
 
 ---
 
