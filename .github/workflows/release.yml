@@ -32,7 +32,7 @@ jobs:
         run: |
           VERSION_NAME="${GITHUB_REF_NAME}"
           ZIP_NAME="bootanimation-module-${VERSION_NAME}.zip"
-          zip -r9 "$ZIP_NAME" . -x ".git/*" -x ".github/*" -x ".gitignore" -x latest_changelog.md
+          zip -r9 "$ZIP_NAME" . -x ".git/*" -x ".github/*" -x ".gitignore" -x docs/ -x latest_changelog.md
           echo "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
 
       - name: Publish GitHub Release
