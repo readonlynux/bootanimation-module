@@ -4,8 +4,7 @@
 
 # 📃 • CHANGELOG
 
-- Fix bootanimation path file is not regenerated #10
-- WebUI Improvements (Experimental)
-  - Add status controls and status info
+- Fix remove unnecessary MAGISK condition preventing
+- Fix bootanim set relies on static context instead of dynamic context resolution #13
 
 ---

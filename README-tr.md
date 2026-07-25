@@ -67,7 +67,7 @@ Bu modül [meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlay
 
 **ROM:** Evolution-X 10.6
 
-**Modül Versiyonu:** v1.1-stable
+**Modül Versiyonu:** v1.1.1-stable
 
 [Diğer Cihaz İncelemeleri](https://github.com/readonlynux/bootanimation-module/issues?q=state%3Aopen%20label%3Aworks)
 
