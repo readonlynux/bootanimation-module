@@ -1,6 +1,7 @@
 id=bootanimation-module-ronux
 name=Bootanimation
-version=v1.1.1-stable
-versionCode=7
+version=v1.1.2-stable
+versionCode=8
 author=readonlynux
 description=Bootanimation module without OverlayFS
+updateJson=https://raw.githubusercontent.com/readonlynux/bootanimation-module/latest/update.json

@@ -1,7 +1,7 @@
 #!/system/bin/sh
 persist_dir="/data/adb/bootanimation"
 
-ui_print '- Installing Bootanimation Changer without OverlayFS'
+ui_print '- Installing Bootanimation Module without OverlayFS'
 chmod +x $MODPATH/*.sh
 for i in "/product/media/bootanimation.zip" "/system/product/media/bootanimation.zip" "/system/media/bootanimation.zip" "/oem/media/bootanimation.zip"; do
 	if [ -f "$i" ]; then

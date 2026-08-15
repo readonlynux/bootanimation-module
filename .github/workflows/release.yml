@@ -15,24 +15,24 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Check release.md
+      - name: Check CHANGELOG.md
         run: |
-          if [[ ! -f latest_changelog.md ]]; then
+          if [[ ! -f CHANGELOG.md ]]; then
               exit 1
           fi
 
       - name: Determine Release Type from Changelog
         run: |
-          FIRST_LINE=$(head -n 1 latest_changelog.md)
+          FIRST_LINE=$(head -n 1 CHANGELOG.md)
           echo "IS_PRERELEASE=false" >> $GITHUB_ENV
           [[ "$FIRST_LINE" == *"[PRE-RELEASE]"* ]] && echo "IS_PRERELEASE=true" >> $GITHUB_ENV
-          sed -i '1d' latest_changelog.md
+          sed -i '1d' CHANGELOG.md
 
       - name: Create Module ZIP
         run: |
           VERSION_NAME="${GITHUB_REF_NAME}"
           ZIP_NAME="bootanimation-module-${VERSION_NAME}.zip"
-          zip -r9 "$ZIP_NAME" . -x ".git/*" -x ".github/*" -x ".gitignore" -x "docs/*" -x latest_changelog.md
+          zip -r9 "$ZIP_NAME" . -x ".git/*" -x ".github/*" -x "docs/*" -x "SECURITY.md"
           echo "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
 
       - name: Publish GitHub Release
@@ -42,4 +42,4 @@ jobs:
           name: ${{ github.ref_name }} | 🌌 Bootanimation Module
           files: ${{ env.ZIP_NAME }}
           prerelease: ${{ env.IS_PRERELEASE }}
-          body_path: latest_changelog.md
+          body_path: CHANGELOG.md
