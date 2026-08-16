@@ -1,0 +1,17 @@
+name: Mirror to GitLab
+
+on:
+  push:
+  delete:
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GitHub'dan bare mirror clone
+        run: git clone --mirror https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git repo-mirror
+
+      - name: GitLab'e force push
+        run: |
+          cd repo-mirror
+          git push --mirror https://oauth2:${{ secrets.GITLAB_TOKEN }}@gitlab.com/readonlynux/bootanimation-module.git
