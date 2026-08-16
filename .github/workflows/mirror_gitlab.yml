@@ -3,6 +3,7 @@ name: Mirror to GitLab
 on:
   push:
   delete:
+  workflow_dispatch: 
 
 jobs:
   mirror:
