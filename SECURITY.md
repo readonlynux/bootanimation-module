@@ -4,8 +4,8 @@
 
 | Version                | Supported          |
 | ----------------------- | ------------------- |
-| Latest release (`v1.1.1-stable` or newer) | :white_check_mark: |
-| Older releases           | :x:                 |
+| Latest release | :white_check_mark: |
+| Older releases           | :x: |
 
 This is a small, actively developed project — only the latest release receives
 security fixes. Please update before assuming a report is still open.
@@ -37,8 +37,7 @@ Advisory (and credit you as the reporter, if you'd like).
 - Security fixes are called out briefly in the changelog/release notes at a high
   level (what area was affected, that you should update) without exploit
   details.
-- Full technical details are published separately as a GitHub Security Advisory
-  once a fixed release is available.
+- Full technical details will be published separately as a GitHub Security Notice **3 days after the version is released**.
 
 # Contact
 
