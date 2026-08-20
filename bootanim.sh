@@ -71,7 +71,7 @@ debug_mode(){
 		# Disable Debug mode
 		if [ -f "$MODDIR/debug_mod" ]; then
 			read -p 'All settings will be reverted for testing purposes. Do you want to continue (y/N): ' userInp
-			rm -rf "$MODDIR/debug_mod" "$MODDIR/vfs" "$persist_dir/vfs" 2>/dev/null
+			rm -rf "$MODDIR/debug_mod"  2>/dev/null
 			mv "$MODDIR/webroot_disabled" "$MODDIR/webroot" 2>/dev/null
 			mv "$MODDIR/post-fs-data.sh_disabled" "$MODDIR/post-fs-data.sh"
 			exit
