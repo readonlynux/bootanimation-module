@@ -1,5 +1,5 @@
 #!/system/bin/sh
-DEBUG="true"
+DEBUG="false"
 
 # ======== variables ========
 persist_dir=/data/adb/bootanimation
@@ -71,10 +71,13 @@ debug_mode(){
 		# Disable Debug mode
 		if [ -f "$MODDIR/debug_mod" ]; then
 			read -p 'All settings will be reverted for testing purposes. Do you want to continue (y/N): ' userInp
+			if [ "$userInp" = 'y' ]; then
 			rm -rf "$MODDIR/debug_mod"  2>/dev/null
 			mv "$MODDIR/webroot_disabled" "$MODDIR/webroot" 2>/dev/null
 			mv "$MODDIR/post-fs-data.sh_disabled" "$MODDIR/post-fs-data.sh"
 			exit
+		else
+			abort_msg 'Aborted'
 		fi
 		# Enable Debug mode
 		touch "$MODDIR/debug_mod"
