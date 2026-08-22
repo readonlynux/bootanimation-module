@@ -4,8 +4,8 @@
 
 # 📃 • CHANGELOG
 
-- Fixed a security issue in the WebUI affecting file and directory path handling.
-- Improved some text and wording.
-- Added support for update checks.
+- Migrated from plain-text commands syntax to standard POSIX flag for better usability, consistency, and shell integration
+- Added a specialized debug mode for testing environments (disabled by default in release versions)
+- Secured the WebUI command execution flow
 
 ---
