@@ -1,6 +1,11 @@
 alert("This feature is experimental! Use it at your own risk.");
 
 const BASE_DIR = "/sdcard/";
+
+function toB64(str) {
+    return btoa(unescape(encodeURIComponent(str)));
+}
+
 let currentPath = BASE_DIR;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -25,7 +30,7 @@ async function runKsuCmd(cmd) {
 }
 
 async function checkState() {
-    let cmd = `sh -c "bootanim state 2>&1 | tr '\n' '|'"`;
+    let cmd = `sh -c "bootanim -st 2>&1 | tr '\n' '|'"`;
     let res = await runKsuCmd(cmd);
     let output = res.stdout;
     
@@ -81,8 +86,10 @@ async function loadDirectory(path) {
     const fileListDiv = document.getElementById('file-list');
     fileListDiv.innerHTML = "<div style='padding:16px; text-align:center;'>Loading...</div>";
     
-    let safeCurrentPath = currentPath.replace(/'/g, "'\\''");
-    let cmd = `sh -c "cd / && ls -p '${safeCurrentPath}' 2>&1 | tr '\n' '|'"`;
+    // let safeCurrentPath = currentPath.replace(/'/g, "'\\''");
+    // let cmd = `sh -c "cd / && ls -p '${safeCurrentPath}' 2>&1 | tr '\n' '|'"`;
+    let encodedPath = toB64(currentPath);
+    let cmd = `P=$(echo '${encodedPath}' | toybox base64 -d); ls -p "$P" 2>&1 | tr '\n' '|'`;
     let res = await runKsuCmd(cmd);
     
     let items = res.stdout.split("|").filter(item => item.trim() !== "");
@@ -130,8 +137,10 @@ async function confirmAndApply(filePath) {
     if (!userConfirm) return;
     
     document.getElementById('file-list').innerHTML = "<div style='padding:16px; text-align:center; color:var(--md-sys-color-primary);'>Applying... Please wait.</div>";
-    let safeFilePath = filePath.replace(/'/g, "'\\''");
-    let cmd = `sh -c "cd / && bootanim set '${safeFilePath}' 2>&1 | tr '\n' '|'"`;
+    // let safeFilePath = filePath.replace(/'/g, "'\\''");
+    // let cmd = `sh -c "cd / && bootanim set '${safeFilePath}' 2>&1 | tr '\n' '|'"`;
+    let encodedPath = toB64(filePath);
+    let cmd = `P=$(echo '${encodedPath}' | toybox base64 -d); bootanim -s "$P" 2>&1 | tr '\n' '|'`;
     let res = await runKsuCmd(cmd);
     
     let cleanOutput = res.stdout.replace(/\|/g, "\n").trim();
@@ -149,7 +158,7 @@ async function confirmAndReset() {
     let userConfirm = confirm("Are you sure you want to reset the custom bootanimation to default?");
     if (!userConfirm) return;
     
-    let cmd = `sh -c "bootanim reset 2>&1 | tr '\n' '|'"`;
+    let cmd = `sh -c "bootanim -r 2>&1 | tr '\n' '|'"`;
     let res = await runKsuCmd(cmd);
     
     let cleanOutput = res.stdout.replace(/\|/g, "\n").trim();
@@ -163,7 +172,7 @@ async function confirmAndReset() {
 }
 
 async function confirmAndEnable() {
-    let cmd = `sh -c "bootanim enable 2>&1 | tr '\n' '|'"`;
+    let cmd = `sh -c "bootanim -e 2>&1 | tr '\n' '|'"`;
     let res = await runKsuCmd(cmd);
     let cleanOutput = res.stdout.replace(/\|/g, "\n").trim();
     alert("Result:\n" + cleanOutput);
@@ -171,7 +180,7 @@ async function confirmAndEnable() {
 }
 
 async function confirmAndDisable() {
-    let cmd = `sh -c "bootanim disable 2>&1 | tr '\n' '|'"`;
+    let cmd = `sh -c "bootanim -d 2>&1 | tr '\n' '|'"`;
     let res = await runKsuCmd(cmd);
     let cleanOutput = res.stdout.replace(/\|/g, "\n").trim();
     alert("Result:\n" + cleanOutput);
