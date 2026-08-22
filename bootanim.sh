@@ -16,7 +16,7 @@ help_menu(){
 	echo '==================================================='
 	echo '-s, --set       Apply bootanimation.zip'
 	echo '-e, --enable    Enable custom bootanimation'
-	echo '-d, -disable    Disable custom bootanimation'
+	echo '-d, ---disable    Disable custom bootanimation'
 	echo '-r, --reset     Remove custom bootanimation'
 	echo '-st, --state    Show bootanimation apply status'
 	echo '-h, --help      Show help menu'
@@ -72,12 +72,13 @@ debug_mode(){
 		if [ -f "$MODDIR/debug_mod" ]; then
 			read -p 'All settings will be reverted for testing purposes. Do you want to continue (y/N): ' userInp
 			if [ "$userInp" = 'y' ]; then
-			rm -rf "$MODDIR/debug_mod"  2>/dev/null
-			mv "$MODDIR/webroot_disabled" "$MODDIR/webroot" 2>/dev/null
-			mv "$MODDIR/post-fs-data.sh_disabled" "$MODDIR/post-fs-data.sh"
-			exit
-		else
-			abort_msg 'Aborted'
+				rm -rf "$MODDIR/debug_mod"  2>/dev/null
+				mv "$MODDIR/webroot_disabled" "$MODDIR/webroot" 2>/dev/null
+				mv "$MODDIR/post-fs-data.sh_disabled" "$MODDIR/post-fs-data.sh"
+				exit
+			else
+				abort_msg 'Aborted'
+			fi
 		fi
 		# Enable Debug mode
 		touch "$MODDIR/debug_mod"
