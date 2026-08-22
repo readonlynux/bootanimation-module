@@ -16,7 +16,7 @@ help_menu(){
 	echo '==================================================='
 	echo '-s, --set       Apply bootanimation.zip'
 	echo '-e, --enable    Enable custom bootanimation'
-	echo '-d, ---disable    Disable custom bootanimation'
+	echo '-d, --disable    Disable custom bootanimation'
 	echo '-r, --reset     Remove custom bootanimation'
 	echo '-st, --state    Show bootanimation apply status'
 	echo '-h, --help      Show help menu'
@@ -27,7 +27,8 @@ abort_msg(){
 	echo -e "\033[31mE: $abortInp \033[0m"
 	exit 1
 }
-log_msg(){
+log_msg()
+{
 	local logInp="$@"
 	echo "I: $logInp"
 }
@@ -40,6 +41,7 @@ set_ani(){
 		$MODDIR/create_bootanimation_pathfile.sh
 		[ "$?" = "100" ] && abort_msg 'Bootanimation file was not found in the system path'
 	fi
+	rm -f "$persist_dir/disable"
 	cp -f "$user_anipath" "$bootani_path"
 	chcon "u:object_r:system_file:s0" "$bootani_path"
 	chown root:root "$bootani_path"
@@ -54,9 +56,11 @@ reset_ani(){
 	exit
 }
 enable_ani(){
+	[ ! -f "$bootani_path" ] && abort_msg 'No custom bootanimation found to enable'
 	rm -f "$persist_dir/disable" && log_msg 'Custom bootanimation enabled'
 }
 disable_ani(){
+	[ ! -f "$bootani_path" ] && abort_msg 'No custom bootanimation found to disable'
 	mkdir -p "$persist_dir"
 	touch "$persist_dir/disable" && log_msg 'Custom bootanimation disabled'
 }
