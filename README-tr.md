@@ -90,7 +90,7 @@ Bu modül [meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlay
 # 📱 • Kullanım
 
 ```bash
-bootanim help
+bootanim -h
 ```
 
 ---
