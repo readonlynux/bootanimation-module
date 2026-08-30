@@ -12,7 +12,7 @@ user_anipath="$2"
 # ======== functions ========
 help_menu(){
 	echo '==================================================='
-	echo 'bootanim <command> [arg]                v1.2-stable'
+	echo 'bootanim <command> [arg]              v1.2.1-stable'
 	echo '==================================================='
 	echo '-s, --set       Apply bootanimation.zip'
 	echo '-e, --enable    Enable custom bootanimation'

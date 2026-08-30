@@ -59,9 +59,9 @@ Bu modül [meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlay
 
 | Cihaz | Android Ver | ROM | Module Ver | Desteklenen Kök Yön |
 | :---: | :---: | :---: | :---: |:---: |
-| Redmi Note 12 4G | 15 | EvoX 10.6 | v1.2-stable | KernelSU v3.3.0 (32601-2)|
-| Redmi Note 12 4G | 16 | LOS 23.2 | v1.2-stable | APatch 9a63e0f (112244)|
-| Redmi Note 12 4G | 16 | LOS 23.2 | v1.2-stable | Magisk v30.7 (30700)|
+| Redmi Note 12 4G | 15 | EvoX 10.6 | v1.2.1-stable | KernelSU v3.3.0 (32601-2)|
+| Redmi Note 12 4G | 16 | LOS 23.2 | v1.2.1-stable | APatch 9a63e0f (112244)|
+| Redmi Note 12 4G | 16 | LOS 23.2 | v1.2.1-stable | Magisk v30.7 (30700)|
 
 [Diğer Cihaz İncelemeleri](https://github.com/readonlynux/bootanimation-module/issues?q=label%3Aworks)
 
