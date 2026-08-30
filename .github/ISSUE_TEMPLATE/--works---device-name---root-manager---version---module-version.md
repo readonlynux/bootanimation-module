@@ -2,7 +2,7 @@
 name: "[ WORKS ] Device name - Root Manager & version - Module version"
 about: "..."
 title: ''
-labels: bug, works
+labels: works
 assignees: ''
 
 ---
