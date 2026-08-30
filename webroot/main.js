@@ -30,7 +30,7 @@ async function runKsuCmd(cmd) {
 }
 
 async function checkState() {
-    let cmd = `sh -c "bootanim -st 2>&1 | tr '\n' '|'"`;
+    let cmd = `sh -c "/data/adb/modules/bootanimation-module-ronux/bootanim.sh -st 2>&1 | tr '\n' '|'"`;
     let res = await runKsuCmd(cmd);
     let output = res.stdout;
     
@@ -140,7 +140,7 @@ async function confirmAndApply(filePath) {
     // let safeFilePath = filePath.replace(/'/g, "'\\''");
     // let cmd = `sh -c "cd / && bootanim set '${safeFilePath}' 2>&1 | tr '\n' '|'"`;
     let encodedPath = toB64(filePath);
-    let cmd = `P=$(echo '${encodedPath}' | toybox base64 -d); bootanim -s "$P" 2>&1 | tr '\n' '|'`;
+    let cmd = `P=$(echo '${encodedPath}' | toybox base64 -d); /data/adb/modules/bootanimation-module-ronux/bootanim.sh -s "$P" 2>&1 | tr '\n' '|'`;
     let res = await runKsuCmd(cmd);
     
     let cleanOutput = res.stdout.replace(/\|/g, "\n").trim();
@@ -158,7 +158,7 @@ async function confirmAndReset() {
     let userConfirm = confirm("Are you sure you want to reset the custom bootanimation to default?");
     if (!userConfirm) return;
     
-    let cmd = `sh -c "bootanim -r 2>&1 | tr '\n' '|'"`;
+    let cmd = `sh -c "/data/adb/modules/bootanimation-module-ronux/bootanim.sh -r 2>&1 | tr '\n' '|'"`;
     let res = await runKsuCmd(cmd);
     
     let cleanOutput = res.stdout.replace(/\|/g, "\n").trim();
@@ -172,7 +172,7 @@ async function confirmAndReset() {
 }
 
 async function confirmAndEnable() {
-    let cmd = `sh -c "bootanim -e 2>&1 | tr '\n' '|'"`;
+    let cmd = `sh -c "/data/adb/modules/bootanimation-module-ronux/bootanim.sh -e 2>&1 | tr '\n' '|'"`;
     let res = await runKsuCmd(cmd);
     let cleanOutput = res.stdout.replace(/\|/g, "\n").trim();
     alert("Result:\n" + cleanOutput);
@@ -180,7 +180,7 @@ async function confirmAndEnable() {
 }
 
 async function confirmAndDisable() {
-    let cmd = `sh -c "bootanim -d 2>&1 | tr '\n' '|'"`;
+    let cmd = `sh -c "/data/adb/modules/bootanimation-module-ronux/bootanim.sh -d 2>&1 | tr '\n' '|'"`;
     let res = await runKsuCmd(cmd);
     let cleanOutput = res.stdout.replace(/\|/g, "\n").trim();
     alert("Result:\n" + cleanOutput);
