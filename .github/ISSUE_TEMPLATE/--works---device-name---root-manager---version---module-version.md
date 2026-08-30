@@ -1,8 +1,8 @@
 ---
-name: "[ WORKS ] Device name"
+name: "[ WORKS ] Device name - Root Manager & version - Module version"
 about: "..."
 title: ''
-labels: works
+labels: bug, works
 assignees: ''
 
 ---
@@ -10,5 +10,6 @@ assignees: ''
 **Device:** Android
 **Root Manager and Version:**
 **Android Version:**
+**Module Version:**
 **ROM:**
 **ROM version:**
