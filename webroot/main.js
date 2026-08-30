@@ -86,8 +86,6 @@ async function loadDirectory(path) {
     const fileListDiv = document.getElementById('file-list');
     fileListDiv.innerHTML = "<div style='padding:16px; text-align:center;'>Loading...</div>";
     
-    // let safeCurrentPath = currentPath.replace(/'/g, "'\\''");
-    // let cmd = `sh -c "cd / && ls -p '${safeCurrentPath}' 2>&1 | tr '\n' '|'"`;
     let encodedPath = toB64(currentPath);
     let cmd = `P=$(echo '${encodedPath}' | toybox base64 -d); ls -p "$P" 2>&1 | tr '\n' '|'`;
     let res = await runKsuCmd(cmd);
@@ -137,8 +135,6 @@ async function confirmAndApply(filePath) {
     if (!userConfirm) return;
     
     document.getElementById('file-list').innerHTML = "<div style='padding:16px; text-align:center; color:var(--md-sys-color-primary);'>Applying... Please wait.</div>";
-    // let safeFilePath = filePath.replace(/'/g, "'\\''");
-    // let cmd = `sh -c "cd / && bootanim set '${safeFilePath}' 2>&1 | tr '\n' '|'"`;
     let encodedPath = toB64(filePath);
     let cmd = `P=$(echo '${encodedPath}' | toybox base64 -d); /data/adb/modules/bootanimation-module-ronux/bootanim.sh -s "$P" 2>&1 | tr '\n' '|'`;
     let res = await runKsuCmd(cmd);
