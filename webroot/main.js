@@ -38,15 +38,15 @@ async function checkState() {
     const btnEnable = document.getElementById('btn-enable');
     const btnDisable = document.getElementById('btn-disable');
     
-    if (output.includes("State: enabled")) {
+    if (output.includes("enabled")) {
         statusDisplay.innerHTML = `State: <span style="color: #a8efb4; font-weight: bold;">Enabled</span>`;
         btnEnable.style.display = 'none';
         btnDisable.style.display = 'flex';
-    } else if (output.includes("State: disabled") || output.includes("State: disable")) {
+    } else if (output.includes("disabled") || output.includes("State: disable")) {
         statusDisplay.innerHTML = `State: <span style="color: var(--md-sys-color-error); font-weight: bold;">Disabled</span>`;
         btnEnable.style.display = 'flex';
         btnDisable.style.display = 'none';
-    } else if (output.includes("State: No custom bootanimation")) {
+    } else if (output.includes("No custom bootanimation")) {
         statusDisplay.innerHTML = `State: <span style="color: #747778; font-weight: bold;">No Custom Bootanimation</span>`;
         btnEnable.style.display = 'none';
         btnDisable.style.display = 'none';
@@ -140,13 +140,8 @@ async function confirmAndApply(filePath) {
     let res = await runKsuCmd(cmd);
     
     let cleanOutput = res.stdout.replace(/\|/g, "\n").trim();
-    
-    if (cleanOutput.toLowerCase().includes("not found") || cleanOutput.toLowerCase().includes("fail")) {
-        alert("Error applying bootanimation:\n" + cleanOutput);
-    } else {
-        alert("Success! Bootanimation applied.\n\n" + cleanOutput);
-        closePicker();
-    }
+    alert(cleanOutput);
+    closePicker();
     loadDirectory(currentPath);
 }
 
@@ -158,12 +153,7 @@ async function confirmAndReset() {
     let res = await runKsuCmd(cmd);
     
     let cleanOutput = res.stdout.replace(/\|/g, "\n").trim();
-    
-    if (cleanOutput.toLowerCase().includes("not found") || cleanOutput.toLowerCase().includes("fail")) {
-        alert("Error resetting bootanimation:\n" + cleanOutput);
-    } else {
-        alert("Success! Bootanimation reset to default.\n\n" + cleanOutput);
-    }
+    alert(cleanOutput);
     checkState();
 }
 
@@ -171,7 +161,7 @@ async function confirmAndEnable() {
     let cmd = `sh -c "/data/adb/modules/bootanimation-module-ronux/bootanim.sh -e 2>&1 | tr '\n' '|'"`;
     let res = await runKsuCmd(cmd);
     let cleanOutput = res.stdout.replace(/\|/g, "\n").trim();
-    alert("Result:\n" + cleanOutput);
+    alert(cleanOutput);
     checkState();
 }
 
@@ -179,6 +169,6 @@ async function confirmAndDisable() {
     let cmd = `sh -c "/data/adb/modules/bootanimation-module-ronux/bootanim.sh -d 2>&1 | tr '\n' '|'"`;
     let res = await runKsuCmd(cmd);
     let cleanOutput = res.stdout.replace(/\|/g, "\n").trim();
-    alert("Result:\n" + cleanOutput);
+    alert(cleanOutput);
     checkState();
 }
