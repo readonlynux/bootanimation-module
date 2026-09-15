@@ -24,13 +24,21 @@ help_menu(){
 }
 abort_msg(){
 	local abortInp="$@"
-	echo -e "\033[31mE: $abortInp \033[0m"
+	if [ -t 1 ]; then
+		echo -e "\033[31mE: $abortInp \033[0m"
+	else
+		echo "ERROR\n\n$abortInp"
+	fi
 	exit 1
 }
 log_msg()
 {
 	local logInp="$@"
-	echo "I: $logInp"
+	if [ -t 1 ]; then
+		echo "I: $logInp"
+	else
+		echo "INFO\n\n$logInp"
+	fi
 }
 
 # ======== main func ========
