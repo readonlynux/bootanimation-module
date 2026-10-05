@@ -1,3 +1,4 @@
+#!/system/bin/sh
 MOD_PATH="${0%/*}"
 
 [ ! -f "$MOD_PATH/bootanim.sh" ] && exit 1
