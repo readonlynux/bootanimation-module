@@ -1,6 +1,8 @@
 <!-- Fix GitLab YAML -->
 ---
 
+[![ShellCheck](https://github.com/readonlynux/bootanimation-module/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/readonlynux/bootanimation-module/actions/workflows/shellcheck.yml)
+
 #  🌌 • Bootanimation Module without OverlayFS
 
 [English](README.md) | Türkçe
