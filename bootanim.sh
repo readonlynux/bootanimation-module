@@ -44,15 +44,13 @@ log_msg()
 set_ani(){
 	[ ! -f "$user_anipath" ] && abort_msg 'Bootanimation file not found!'
 	mkdir -p "$persist_dir" || abort_msg 'Could not create persist directory'
-	if [ ! -f "$persist_dir/bootanimation_path.txt" ]; then
-		$MODDIR/create_bootanimation_pathfile.sh
-		[ "$?" = "100" ] && abort_msg 'Bootanimation file was not found in the system path'
-	fi
+	"$MODDIR/create_bootanimation_pathfile.sh" 
+	[ "$?" = "100" ] && abort_msg 'Bootanimation file was not found in the system path'
 	# fail-safe
 	tmp_path="$bootani_path.tmp"
 	if ! cp -f "$user_anipath" "$tmp_path" || ! chmod 644 "$tmp_path" || ! chown "root:root" "$tmp_path"; then
 		rm -f "$tmp_path"
-	       	abort_msg 'Copy failed, and custom bootanimation not changed'
+		abort_msg 'Copy failed, and custom bootanimation not changed'
 	fi
 	mv -f "$tmp_path" "$bootani_path" || { rm -f "$tmp_path"; abort_msg 'Could not replace bootanimation'; }
 	chcon "u:object_r:system_file:s0" "$bootani_path" 2>/dev/null

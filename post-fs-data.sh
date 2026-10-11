@@ -11,7 +11,7 @@ system_path="$(cat "$persist_dir/bootanimation_path.txt")"
 bootani_con="$(ls -Z "$system_path" 2>/dev/null | awk '{print $1}')"
 if [ ! -f "$system_path" ]; then
 	[ -f "$persist_dir/bootanimation_path.txt" ] && rm "$persist_dir/bootanimation_path.txt"
-	$MODDIR/create_bootanimation_pathfile.sh
+	"$MODDIR/create_bootanimation_pathfile.sh"
 	exit
 fi
 
