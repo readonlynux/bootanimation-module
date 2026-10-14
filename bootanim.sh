@@ -53,7 +53,6 @@ set_ani(){
 		abort_msg 'Copy failed, and custom bootanimation not changed'
 	fi
 	mv -f "$tmp_path" "$bootani_path" || { rm -f "$tmp_path"; abort_msg 'Could not replace bootanimation'; }
-	chcon "u:object_r:system_file:s0" "$bootani_path" 2>/dev/null
 	rm -f "$persist_dir/disable"
 	log_msg 'Bootanimation applied successfully'
 	exit
