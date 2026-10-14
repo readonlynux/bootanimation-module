@@ -10,5 +10,8 @@ elif [ "$APATCH" = "true" ]; then
 else
 	[ -w /sbin ] && magisktmp=/sbin
 	[ -w /debug_ramdisk ] && magisktmp=/debug_ramdisk
-	ln -sf "$MOD_PATH/bootanim.sh" "$magisktmp/bootanim"
+	# check magisktmp
+	[ -z "$magisktmp" ] && log -t bootanimation-module-ronux 'MagiskTMP dir not found or inaccessible, bootanim not linked' && exit 1
+	# link the bootanim to magisktmp
+        ln -sf "$MOD_PATH/bootanim.sh" "$magisktmp/bootanim"
 fi
