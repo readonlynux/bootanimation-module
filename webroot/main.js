@@ -1,5 +1,3 @@
-alert("This feature is experimental! Use it at your own risk.");
-
 const BASE_DIR = "/sdcard/";
 
 function toB64(str) {

@@ -36,7 +36,7 @@ This module allows you to modify bootanimation without requiring [meta-overlayfs
 - Supports Magisk
 - Supports KernelSU
 - Supports APatch
-- WebUI (Experimental)
+- WebUI
 - Dynamic Partition Determination
 - Simple CLI
 
@@ -46,7 +46,7 @@ This module allows you to modify bootanimation without requiring [meta-overlayfs
 
 <details markdown='1'><summary>Show WebUI Screenshots</summary>
 
-| Home Page (enabled) | Home Page (disabled) |
+| Homepage (enabled) | Homepage (disabled) |
 | :---: | :---: |
 | <img src="docs/assets/webui_homepage_enabled.png" width="200" /> | <img src="docs/assets/webui_homepage_disabled.png" width="200" /> |
 
@@ -62,9 +62,9 @@ This module allows you to modify bootanimation without requiring [meta-overlayfs
 
 | Device | Android Ver | ROM | Module Ver | Supported Root Manager |
 | :---: | :---: | :---: | :---: |:---: |
-| Redmi Note 12 4G | 15 | EvoX 10.6 | v1.2.2-stable | KernelSU v3.3.0 (32601-2)|
-| Redmi Note 12 4G | 16 | LOS 23.2 | v1.2.1-stable | APatch 9a63e0f (112244)|
-| Redmi Note 12 4G | 16 | LOS 23.2 | v1.2.1-stable | Magisk v30.7 (30700)|
+| Redmi Note 12 4G | 15 | EvoX 10.6 | v1.3-stable | KernelSU v3.3.0 (32601-2)|
+| Redmi Note 12 4G | 16 | LOS 23.2 | v1.3-stable | APatch 9a63e0f (112244)|
+| Redmi Note 12 4G | 16 | LOS 23.2 | v1.3-stable | Magisk v30.7 (30700)|
 
 [Other device reports](https://github.com/readonlynux/bootanimation-module/issues?q=label%3Aworks)
 
