@@ -14,6 +14,9 @@ Bu modül [meta-overlayfs](https://github.com/KernelSU-Modules-Repo/meta-overlay
 >[!CAUTION]
 > Bu modül yüzünden bozulmuş cihazlardan, bozulmuş SD kartlardan veya herhangi bir hasardan sorumlu değilim. Kullanım sorumluluğu size aittir.
 
+>[!CAUTION]
+> OneUI (Samsung) ROM'ları desteklenmez. Çünkü, QMG dosya formatı desteklenmemektedir.
+
 > Bu modül [Magisk](https://github.com/topjohnwu/Magisk), [KernelSU](https://github.com/tiann/KernelSU) ve [APatch](https://github.com/bmax121/APatch) ile uyumludur
 
 ### 📙 • Bu dokümantasyon şunları içerir;

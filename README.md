@@ -14,6 +14,9 @@ This module allows you to modify bootanimation without requiring [meta-overlayfs
 >[!CAUTION]
 > I am not responsible for bricked devices, dead SD cards, or any damage caused by using this module. Use it at your own risk.
 
+>[!CAUTION]
+> OneUI (Samsung) ROMs are not supported. Because QMG file format not supported.
+
 > This module is compatible with [Magisk](https://github.com/topjohnwu/Magisk), [KernelSU](https://github.com/tiann/KernelSU) and [APatch](https://github.com/bmax121/APatch)
 
 ### 📙 • This documentation includes;
